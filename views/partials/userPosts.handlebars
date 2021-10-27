@@ -8,6 +8,33 @@
         <p class='content pt-2 pl-3'>
             {{body}}
         </p>
-        <a href='/project/{{id}}' class='button is-dark is-outlined'>Comment on Post</a>
+        <div class='columns'>
+            <div class='column'>
+                <a
+                    href='/project/{{id}}'
+                    class='button is-dark is-outlined'
+                >Comment on Post</a>
+            </div>
+            <div class='column is-offset-6'>
+                <div class='field is-grouped'>
+                    <p class='control'>
+                        <a
+                            href='/project/edit/{{id}}'
+                            class='button is-info is-light is-outlined'
+                        >
+                            Edit Post
+                        </a>
+                    </p>
+                    <p class='control'>
+                        <a
+                            href='/project/delete/{{id}}'
+                            class='button is-danger is-light is-outlined'
+                        >
+                            Delete Post
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

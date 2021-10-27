@@ -108,6 +108,24 @@ router.get("/create", forceLogin, authenticate, async (req, res) => {
     }
 });
 
+router.get('/profile', forceLogin, authenticate, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.user.id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    })
+
+    const user = userData.get({ plain: true })
+
+    res.render('profile', {
+      ...user,
+      logged_in: true,
+    })
+  } catch (error) {
+    res.status(500).json(error)
+  }
+});
+
 router.get('/login', authenticate, (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/profile')
