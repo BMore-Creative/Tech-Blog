@@ -1,0 +1,113 @@
+<article class='container'>
+    <div class='columns'>
+        <div class='column is-1'></div>
+        <div class='column'>
+            <section class='pt-5'>
+                <h4 class='title is-size-4'>Log In</h4>
+                <form id='loginForm'>
+                    <div class='field'>
+                        <label for='username' class='label'>Username</label>
+                        <input
+                            class='input'
+                            type='username'
+                            id='username'
+                            name='username'
+                            placeholder='Enter Username...'
+                        />
+                    </div>
+                    <div class='field'>
+                        <label for='password' class='label'>Password</label>
+                        <input
+                            class='input'
+                            type='password'
+                            id='password'
+                            name='password'
+                            placeholder='Enter Password...'
+                        />
+                    </div>
+                    <div
+                        class='notification is-danger is-light hide'
+                        id='loginFailed'
+                    >
+                        <p class='has-text-weight-bold'>Login Failed:</p>
+                        <p>Entered Email/Password not found!</p>
+                    </div>
+                    <div class='field'>
+                        <input class='button' type='submit' value='Log In' />
+                    </div>
+                </form>
+                <div class='notification is-warning is-light mt-6'>
+                    <h4 class='is-size-4'>
+                        Notice:
+                    </h4>
+                    <p>You must be logged in to view 'My Profile' or 'Make Post'</p>
+                </div>
+            </section>
+        </div>
+        <div class='column is-offset-1'>
+            <section class='pt-5'>
+                <h4 class='title is-size-4'>Register</h4>
+                <form id='registerForm'>
+                    <div class='field'>
+                        <label for='newUsername' class='label'>Username</label>
+                        <p class='control'>
+                            <textarea
+                                class='textarea has-fixed-size'
+                                rows='1'
+                                name='newUsername'
+                                id='newUsername'
+                                placeholder='Enter Username...'
+                            ></textarea>
+                        </p>
+                    </div>
+                    <div class='field'>
+                        <label for='newPassword' class='label'>Password</label>
+                        <input
+                            class='input'
+                            type='password'
+                            name='newPassword'
+                            id='newPassword'
+                            minlength='8'
+                            placeholder='Enter Password...'
+                        />
+                    </div>
+                    <div class='field'>
+                        <label for='confirmPassword' class='label'>Confirm
+                            Password</label>
+                        <input
+                            class='input'
+                            type='password'
+                            name='confirmPassword'
+                            id='confirmPassword'
+                            minlength='8'
+                            placeholder='Confirm Password...'
+                        />
+                    <div
+                        class='notification is-danger is-light hide'
+                        id='repeatUsername'
+                    >
+                        <p class='has-text-weight-bold'>Registration Failed:</p>
+                        <p>An account with this username already exists! </p>
+                    </div>
+                    <div
+                        class='notification is-danger is-light hide'
+                        id='confirmFailed'
+                    >
+                        <p class='has-text-weight-bold'>Registration Failed:</p>
+                        <p>Passwords do not match!</p>
+                    </div>
+                    <div class='field'>
+                        <input
+                            class='button'
+                            type='submit'
+                            value='Register User'
+                        />
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class='column is-1'></div>
+    </div>
+</article>
+
+<script src='./js/login.js'></script>

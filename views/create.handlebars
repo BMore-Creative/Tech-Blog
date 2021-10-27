@@ -1,0 +1,45 @@
+<article class='container'>
+    <section class='pt-5'>
+        <h3 class='title is-size-3'>New Post</h3>
+        <hr />
+        <form id='postForm'>
+            <div class='field'>
+                <label for='postTitle' class='label'>Post Title</label>
+                <input
+                    class='input'
+                    type='text'
+                    name='postTitle'
+                    id='postTitle'
+                    placeholder='Enter Post Title...'
+                    required
+                />
+            </div>
+            <div class='field'>
+                <label for='postBody' class='label'>Details</label>
+                <p class='control'>
+                    <textarea
+                        class='textarea'
+                        name='postBody'
+                        id='postBody'
+                        placeholder="What do you want to post?"
+                        required
+                    ></textarea>
+                </p>
+            </div>
+            <div class='field'>
+                <div class='control'>
+                    <button class='button' id='create' type='submit'>Create Post</button>
+                </div>
+            </div>
+            <div
+                class='notification is-success is-light hide'
+                id='postCreated'
+            >
+                <p class='has-text-weight-bold'>Post Created!</p>
+                <p>Returning home...</p>
+            </div>
+        </form>
+    </section>
+</article>
+
+<script src='/js/create.js'></script>

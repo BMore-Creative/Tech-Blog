@@ -2,8 +2,26 @@
     font-family: 'Raleway', sans-serif;
 }
 
+.hide {
+    display: none;
+}
+
 main {
     background: #ccdad1;
+}
+
+@media only screen and (max-width: 1024px) {
+    .navbar-menu {
+        background-color: #6f6866;
+    }
+}
+
+.navbar-item{
+    color: #ccdad1;
+}
+
+a.navbar-item:hover {
+    background-color: #ccdad1;
 }
 
 .is-brand-brown {
