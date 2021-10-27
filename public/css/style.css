@@ -1,0 +1,15 @@
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+main {
+    background: #ccdad1;
+}
+
+.is-brand-brown {
+    background-color: #38302e;
+}
+
+.is-font-green {
+    color: #ccdad1;
+}

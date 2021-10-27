@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Talk About Tech</title>
+        <link
+            rel='stylesheet'
+            href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css'
+        />
+        <link rel='stylesheet' href='/css/style.css' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+        <link
+            href='https://fonts.googleapis.com/css2?family=Raleway&display=swap'
+            rel='stylesheet'
+        />
+    </head>
+    <body>
+        <header>
+            <nav class='navbar has-shadow is-brand-brown'>
+                <div class='navbar-brand'>
+                    <a href='/'>
+                        <p class='title is-font-green'>Talk About Tech</p>
+                    </a>
+                    <button class='navbar-burger' id='navbarBurger'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div id='navbarMenu' class='navbar-menu'>
+                    <div class='navbar-end'>
+                        <a href='/' class='navbar-item'>Home</a>
+                        <a href='/profile' class='navbar-item'>My Profile</a>
+                        <a href='/create' class='navbar-item'>Make Post</a>
+                        {{#if logged_in}}
+                            <a id='logout' class='navbar-item'>Logout</a>
+                        {{else}}
+                            <a href='/login' class='navbar-item'>Login/Register
+                                User</a>
+                        {{/if}}
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+
+        <script src='/js/main.js'></script>
+    </body>
+</html>

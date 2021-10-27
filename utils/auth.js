@@ -1,9 +1,8 @@
 const { User } = require('../models')
-const isLoggedIn = req.session.logged_in
 
 const forceLogin = async (req, res, next) => {
 
-    if(!isLoggedIn) {
+    if(!req.session.logged_in) {
         res.redirect('/login')
 
         return next()
@@ -13,7 +12,7 @@ const forceLogin = async (req, res, next) => {
 }
 
 const authenticate = async (req, res, next) => {
-    if(isLoggedIn) {
+    if(req.session.logged_in) {
         const user = await User.findByPk(req.session.user_id, {
             attributes: {
                 exclude: ['password'],
