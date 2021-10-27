@@ -24,7 +24,7 @@ router.get("/", authenticate, async (req, res) => {
   }
 });
 
-router.get("/post/:id", async (req, res) => {
+router.get("/post/:id", forceLogin, authenticate, async (req, res) => {
   try {
     const postInfo = await Post.findByPk(req.params.id, {
       include: [

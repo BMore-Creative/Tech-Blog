@@ -6,8 +6,20 @@
     display: none;
 }
 
+.flex-wrapper {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
 main {
     background: #ccdad1;
+    flex: 1;
+    overflow: auto;
+}
+
+body {
+    margin: 0;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -26,6 +38,10 @@ a.navbar-item:hover {
 
 .is-brand-brown {
     background-color: #38302e;
+}
+
+.is-brand-light-brown {
+    background-color: #6f6866;
 }
 
 .is-font-green {
