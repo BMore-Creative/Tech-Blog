@@ -1,0 +1,91 @@
+<article class="container pt-5">
+  <section class="message">
+    <div class="message-header is-brand-brown">
+      <h3 class="title is-3 is-font-green mb-0">
+        {{title}}
+      </h3>
+      <h3 class="title is-5 is-font-green">
+        Posted by
+        {{User.username}}
+        on
+        {{format_date createdAt}}
+      </h3>
+    </div>
+    <div class="message-body">
+      <p class="content">{{body}}</p>
+    </div>
+  </section>
+    <section class="message">
+      <div class="message-header is-brand-brown">
+        <h3 class="title is-3 is-font-green">
+          Comments
+        </h3>
+      </div>
+      <div class="message-body">
+        {{#each Comments as |comment|}}
+        {{> comments}}
+        {{/each}}
+      </div>
+    </section>
+
+  <form id="newCommentForm">
+    <div class="field">
+        <label for="commentBody" class="label">Comment</label>
+      <p class="control">
+        <textarea
+          name="commentBody"
+          id="commentBody"
+          class="textarea"
+          placeholder="What do you want to comment?"
+          required
+        ></textarea>
+      </p>
+    </div>
+    <div class="field">
+      <div class="control">
+        <button class="button" id="postComment" type="submit">Post Comment</button>
+      </div>
+    </div>
+    <div>
+      <input id="id" class="hide" value={{id}} />
+    </div>
+  </form>
+</article>
+
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <section class='message'>
+        <div class='message-header is-brand-brown'>
+            <h3 class='title is-size-3 is-font-green'>Warning!</h3>
+        </div>
+        <div class="message-body">
+            <div class="has-text-centered">
+                <p>Are you sure you want to delete <span class="is-underlined has-text-weight-bold">{{title}}</span>?</p>
+                <p class='content is-small pb-2'>(This cannot be undone)</p>
+            </div>
+            <div class="field is-grouped is-grouped-centered">
+                <p class="control">
+                    <button id='delete' class='button is-danger is-light is-outlined'>Delete</button>
+                </p>
+                <p class="control">
+                    <a id='cancel' href='/post/{{id}}' class='button is-dark is-outlined'>Cancel</a>  
+                </p>
+            </div>
+            <div
+                class='notification is-warning is-light hide'
+                id='postDeleted'
+            >
+                <p class='has-text-weight-bold'>Post Deleted!</p>
+                <p>Returning home...</p>
+            </div>
+        </div>
+    </section>
+  </div>
+  <a href='/post/{{id}}' class="modal-close is-large" id='close'></a>
+</div>
+
+<input id='id' class="hide" value={{id}}/>
+
+
+<script src='/js/delete.js'></script>

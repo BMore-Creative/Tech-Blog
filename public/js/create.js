@@ -3,7 +3,7 @@ const createBtn = document.querySelector('#create')
 
 const returnHome = () => {
     createBtn.classList.remove('is-loading')
-    document.location.replace('/')
+    document.location.replace('/profile')
 }
 
 const postCreationHandler = async (event) => {

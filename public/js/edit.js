@@ -3,7 +3,7 @@ const editBtn = document.querySelector('#edit')
 
 const returnHome = () => {
     editBtn.classList.remove('is-loading')
-    document.location.replace('/')
+    document.location.replace('/profile')
 }
 
 const postEditHandler = async (event) => {
