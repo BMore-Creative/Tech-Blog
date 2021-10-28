@@ -15,9 +15,9 @@ router.post("/", authenticate, async (req, res) => {
   }
 });
 
-router.post("/:id", authenticate, async (req, res) => {
+router.put("/:id", authenticate, async (req, res) => {
   try {
-    const updatedProject = await PromiseRejectionEvent.update(
+    const updatedPost = await Post.update(
       {
         title: req.body.post.title,
         body: req.body.post.body,
@@ -29,7 +29,7 @@ router.post("/:id", authenticate, async (req, res) => {
       }
     );
 
-    res.status(200).json(updatedProject);
+    res.status(200).json(updatedPost);
   } catch (error) {
     res.status(400).json(error);
   }

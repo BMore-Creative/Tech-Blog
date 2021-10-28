@@ -1,8 +1,8 @@
 <article class='container'>
     <section class='pt-5'>
-        <h3 class='title is-size-3'>New Post</h3>
+        <h3 class='title is-size-3'>Edit Post</h3>
         <hr />
-        <form id='postForm'>
+        <form id='editForm'>
             <div class='field'>
                 <label for='postTitle' class='label'>Post Title</label>
                 <input
@@ -11,6 +11,7 @@
                     name='postTitle'
                     id='postTitle'
                     placeholder='Enter Post Title...'
+                    value='{{title}}'
                     required
                 />
             </div>
@@ -23,23 +24,22 @@
                         id='postBody'
                         placeholder="What do you want to post?"
                         required
-                    ></textarea>
+                    >{{body}}</textarea>
                 </p>
             </div>
             <div class='field'>
                 <div class='control'>
-                    <button class='button' id='create' type='submit'>Create Post</button>
+                    <button class='button' id='edit' type='submit'>Save Edit</button>
                 </div>
             </div>
-            <div
-                class='notification is-success is-light hide'
-                id='postCreated'
-            >
-                <p class='has-text-weight-bold'>Post Created!</p>
+            <div class='notification is-info is-light hide' id='postEdited'>
+                <p class='has-text-weight-bold'>Post Edited!</p>
                 <p>Returning home...</p>
+            </div>
+            <input id='id' class='hide' value={{id}} />
             </div>
         </form>
     </section>
 </article>
 
-<script src='/js/create.js'></script>
+<script src='/js/edit.js'></script>
