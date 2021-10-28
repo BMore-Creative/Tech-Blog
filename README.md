@@ -3,7 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/80925456/139176033-bcf78f31-b52c-49ec-983d-afc4470bc96c.png)
 
-Live Link: 
+Live Link: https://bmore-creative.github.io/Tech-Blog/
 
 ## Table of Contents
 
